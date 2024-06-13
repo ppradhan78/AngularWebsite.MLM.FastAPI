@@ -15,6 +15,16 @@ export class MlModelService {
     return this.http.get<any>(ApiUrlConstants.TokenizationAPI + searchText)
   }
 
+  getAllFileTokenization(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    const req = new HttpRequest('POST', ApiUrlConstants.TokenizationFileAPI, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req)
+  }
+
   upload(file: File): Observable<any>{
     const formData: FormData = new FormData();
     formData.append('file', file);
