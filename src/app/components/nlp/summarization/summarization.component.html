@@ -1,0 +1,17 @@
+<input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
+<input (click)="onUpload()" [disabled]="!file" value="Upload and Summarize" type="submit"  />
+<br />
+<br />
+<div class="div-style" [hidden]="Summary.length==0">
+  <div style="color:red; font-weight:bolder">
+    Summary Of the File Content:
+  </div>
+  {{ Summary }}
+
+  <div style="color:red; font-weight:bolder">
+    Summary Length: {{SummaryLength}}
+  </div>
+  <div style="color:red; font-weight:bolder">
+    Original Content Length:  {{originalContentLength}}
+  </div>
+</div>

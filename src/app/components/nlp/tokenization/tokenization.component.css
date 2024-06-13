@@ -1,0 +1,9 @@
+.text-area{
+    width:800px;
+    height:200px;
+}
+div-scroll {
+  width: 200px;
+  height: 100px;
+  overflow-y: scroll !important;
+}

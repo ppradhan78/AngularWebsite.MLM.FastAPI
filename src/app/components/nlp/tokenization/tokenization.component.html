@@ -1,0 +1,15 @@
+<div>
+  <h4>Enter tokenization text</h4>
+  <textarea class="text-area" type="text" [(ngModel)]="tokenizationText"></textarea><br />
+  <input type="submit" (click)="getAllTokenization(tokenizationText)" value="Tokenize" [disabled]="!tokenizationText" />
+</div>
+
+<div>
+  <div class="card-header">List of Token</div>
+  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+    @for (token of Tokenization;track token) {
+    <li style="align-items:center">{{ token}}</li>
+    }
+  </ul>
+</div>
+

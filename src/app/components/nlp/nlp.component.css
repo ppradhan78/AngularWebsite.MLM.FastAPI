@@ -1,0 +1,34 @@
+.contents_submenu {
+  display: flex;
+  gap: 3px;
+  /*padding: 50px;*/
+  width:60%;
+}
+ 
+
+/*.row {
+  max-width: 1245px;
+  margin: 0 auto;
+  padding: 75px 0;
+  position: relative;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 40%;
+  padding: 0px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
