@@ -67,7 +67,6 @@ export class TokenizationComponent {
   }
 
   Getpos() {
-    alert('hi');
     if (this.file) {
       const formData = new FormData();
       formData.append("file", this.file, this.file.name);
