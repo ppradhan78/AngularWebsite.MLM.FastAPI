@@ -22,6 +22,8 @@ export class TokenizationComponent {
   FileTokenization: any[] = [];
   RemoveStopwordTokenization: any[] = [];
   stemmedwords: any[] = [];
+  pos: any[] = [];
+
   result: any;
   status: "initial" | "uploading" | "success" | "fail" = "initial";
   file: File | null = null;
@@ -60,7 +62,19 @@ export class TokenizationComponent {
         this.FileTokenization = tokens;
         this.RemoveStopwordTokenization = StopWord;
         this.stemmedwords = this.result.stemmed_words;
+      });
+    }
+  }
 
+  Getpos() {
+    alert('hi');
+    if (this.file) {
+      const formData = new FormData();
+      formData.append("file", this.file, this.file.name);
+
+      this.service.pos(this.file).subscribe(responce => {
+        this.result = JSON.parse(JSON.stringify(responce)).body;
+        this.pos = this.result.POS;
       });
     }
   }

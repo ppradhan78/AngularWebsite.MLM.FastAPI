@@ -35,6 +35,14 @@ export class MlModelService {
     return this.http.request(req)
   }
  
- 
+  pos(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    const req = new HttpRequest('POST', ApiUrlConstants.PosFileAPI, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req)
+  }
     
 }
