@@ -1,5 +1,5 @@
 
-<div>
+<div >
   <input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
 </div>
 
@@ -7,18 +7,20 @@
   <mat-tab label="Main contents">
     <p style="color: forestgreen; font-weight: bolder; text-decoration: underline;">Use of nltk library in python demo</p>
     <div>
-      <p>Tokenization the sentence(s)</p>
-      <p>Remove Stop Words from sentence(s)</p>
-      <p>Remove Punctuation from sentence(s)</p>
-      <p>Stemming words of the sentence(s)</p>
-      <p>Lemmatization words of the sentence(s)</p>
-      <p> Pattern Matching from the sentence(s)</p>
-      <p> Phrase Matcher from the sentence(s)</p>
-      <p> Named Entity Recognition from the sentence(s)</p>
-      <p>Bag of Words from the sentence(s)</p>
-      <p>Feature Extraction from the sentence(s)</p>
-      <p>Document Frequency from the sentence(s)</p>
-      <p>Term Frequency from the sentence(s)</p>
+      <p>
+        1.	Tokenization of the sentence(s).<br />
+        2.	Remove Stop Words from sentence(s).<br />
+        3.	Remove Punctuation from sentence(s).<br />
+        4.	Stemming of words of the sentence(s).<br />
+        5.	Lemmatization of words of the sentence(s).<br />
+        6.	Pattern Matching from the sentence(s).<br />
+        7.	Phrase Matcher from the sentence(s).<br />
+        8.	Named Entity Recognition from the sentence(s).<br />
+        9.	Bag of Words from the sentence(s).<br />
+        10.	Feature Extraction from the sentence(s).<br />
+        11.	Document Frequency from the sentence(s).<br />
+        12.	Term Frequency from the sentence(s).<br />
+      </p>
     </div>
   </mat-tab>
     <mat-tab label="Tokenization">
@@ -36,7 +38,7 @@
         </div>
 
         <div>
-          <button (click)="onUpload()" [disabled]="!file" type="submit">Upload and Tokenization</button>
+          <button class="btn btn-secondary" (click)="onUpload()" [disabled]="!file" type="submit">Upload and Tokenization</button>
           <table border="1">
             <tr>
               <td>
