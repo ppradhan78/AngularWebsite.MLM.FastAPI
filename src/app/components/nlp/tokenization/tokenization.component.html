@@ -1,83 +1,92 @@
-<div>
-  <h4>Enter tokenization text</h4>
-  <textarea class="text-area" type="text" [(ngModel)]="tokenizationText"></textarea><br />
-  <button type="submit" (click)="getAllTokenization(tokenizationText)" value="Tokenize" [disabled]="!tokenizationText">Tokenize</button>
-</div>
 
 <div>
-  <div class="card-header">List of Token</div>
-  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-    @for (token of Tokenization;track token) {
-    <li style="align-items:center">{{ token}}</li>
-    }
-  </ul>
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
 </div>
-<br />
-<div>
-  <input  type="file" class="file-input" (change)="onChange($event)" #fileUpload />
-  <button (click)="onUpload()" [disabled]="!file" type="submit">Upload and Tokenization</button>
-</div>
-<br />
-<div>
-  <table border="1">
-    <tr>
-      <td>
-        Tokens
-      </td>
-      <td>
-        Remove stopword
-      </td>
-      <td>Stemmed</td>
-    </tr>
-    <tr>
-      <td>
-        <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-          @for (filetoken of FileTokenization;track filetoken) {
-          <li style="align-items:center">{{ filetoken}}</li>
-          }
-        </ul>
-      </td>
-      <td>
-        <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-          @for (rstopword of RemoveStopwordTokenization;track rstopword) {
-          <li style="align-items:center">{{ rstopword}}</li>
-          }
-        </ul>
-      </td>
-      <td>
-        <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-          @for (stemmed of stemmedwords;track stemmed) {
-          <li style="align-items:center">{{ stemmed}}</li>
-          }
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        count: {{FileTokenization.length}}
-      </td>
-      <td>
-        count: {{RemoveStopwordTokenization.length}}
-      </td>
-      <td>
-        count: {{stemmedwords.length}}
-      </td>
-    </tr>
-  </table>
-</div>
-<div>POS</div>
-<br />
-<div>
-  <button (click)="Getpos()" [disabled]="!file" type="submit">Upload and POS</button>
-</div>
-<div>
 
-  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-    @for (ps of pos;track ps) {
-    @for (p of ps;track p) {
-    <li style="align-items:center">{{ p}}</li>
-    }
-    }
-  </ul>
-  
-</div>
+<mat-tab-group>
+  <mat-tab label="Tokenization">
+    <div>
+      <div>
+        <h4>Enter tokenization text</h4>
+        <textarea class="text-area" type="text" [(ngModel)]="tokenizationText"></textarea><br />
+        <button type="submit" (click)="getAllTokenization(tokenizationText)" value="Tokenize" [disabled]="!tokenizationText">Tokenize</button>
+        <h4>List of Token</h4>
+        <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+          @for (token of Tokenization;track token) {
+          <li style="align-items:center">{{ token}}</li>
+          }
+        </ul>
+      </div>
+
+      <div>
+        <button (click)="onUpload()" [disabled]="!file" type="submit">Upload and Tokenization</button>
+        <table border="1">
+          <tr>
+            <td>
+              Tokens
+            </td>
+            <td>
+              Remove stopword
+            </td>
+            <td>Stemmed</td>
+          </tr>
+          <tr>
+            <td>
+              <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                @for (filetoken of FileTokenization;track filetoken) {
+                <li style="align-items:center">{{ filetoken}}</li>
+                }
+              </ul>
+            </td>
+            <td>
+              <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                @for (rstopword of RemoveStopwordTokenization;track rstopword) {
+                <li style="align-items:center">{{ rstopword}}</li>
+                }
+              </ul>
+            </td>
+            <td>
+              <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                @for (stemmed of stemmedwords;track stemmed) {
+                <li style="align-items:center">{{ stemmed}}</li>
+                }
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              count: {{FileTokenization.length}}
+            </td>
+            <td>
+              count: {{RemoveStopwordTokenization.length}}
+            </td>
+            <td>
+              count: {{stemmedwords.length}}
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+
+  </mat-tab>
+  <mat-tab label="POS">
+    <div>
+      <div>
+        <button (click)="Getpos()" [disabled]="!file" type="submit">Upload and POS</button>
+      </div>
+      <div>
+
+        <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+          @for (ps of pos;track ps) {
+          @for (p of ps;track p) {
+          <li style="align-items:center">{{ p}}</li>
+          }
+          }
+        </ul>
+
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MlModelService } from '../../../service/ml-model.service';
-
+import { MatTabsModule } from '@angular/material/tabs';
 @Component({
   selector: 'app-tokenization',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MatTabsModule],
   templateUrl: './tokenization.component.html',
   styleUrl: './tokenization.component.css'
 })
