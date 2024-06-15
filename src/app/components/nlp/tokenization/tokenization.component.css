@@ -17,3 +17,7 @@ table {
   width: 100%;
 }
   
+thead{
+    color:green;
+    font-weight:bolder;
+}

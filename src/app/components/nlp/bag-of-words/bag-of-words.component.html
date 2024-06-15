@@ -1,0 +1,52 @@
+<div>
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".txt" /><br />
+  <button class="example-button-row" mat-flat-button (click)="GetBoW()" [disabled]="!file" type="submit">Upload and BoW</button>
+</div>
+<div style="overflow-y: scroll; max-height: 500px;min-width:700px ;text-align:center;justify-items:center">
+  <table >
+    <thead>
+      <tr>
+        <td>
+          Frequency of words
+        </td>
+        <td>
+          Frequent of words
+        </td>
+        <td align="left" >Bag of Words</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="vertical-align: top;max-width: 30% !important">
+          {{word2count | json}}
+        </td>
+        <td style="vertical-align: top; max-width: 30% !important ">
+          <ul style="overflow-y: scroll; text-align:center;justify-items:center">
+            @for (freq of freq_words;track freq) {
+            <li style="align-items:center">{{ freq}}</li>
+            }
+          </ul>
+        </td>
+        <td style="vertical-align: top; max-width: 40% !important">
+          <ul style="overflow-y: scroll;  text-align:center;justify-items:center">
+            @for (b of BoW;track b) {
+            <li style="align-items:center">{{ b}}</li>
+            }
+          </ul>
+        </td>
+       
+      </tr>
+      <tr>
+        <td>
+         
+        </td>
+        <td>
+          count: {{freq_words.length}}
+        </td>
+        <td>
+     
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

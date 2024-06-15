@@ -44,5 +44,15 @@ export class MlModelService {
     });
     return this.http.request(req)
   }
-    
+
+
+  GetBoW(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    const req = new HttpRequest('POST', ApiUrlConstants.BowFileAPI, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req)
+  }
 }

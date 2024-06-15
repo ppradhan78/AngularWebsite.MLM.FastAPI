@@ -1,0 +1,14 @@
+table {
+  width: 1000px;
+}
+
+thead {
+  color: green;
+  font-weight: bolder;
+}
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+  color: white;
+  background-color: cornflowerblue;
+}

@@ -40,60 +40,64 @@
         <div>
           <button class="example-button-row" mat-flat-button (click)="onUpload()" [disabled]="!file" type="submit">Upload and Tokenization</button>
           <table class="mat-elevation-z8">
-            <tr>
-              <td>
-                Tokens
-              </td>
-              <td>
-                Remove stopword
-              </td>
-              <td>Stemmed</td>
-              <td>Lemmatization </td>
-            </tr>
-            <tr>
-              <td>
-                <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-                  @for (filetoken of FileTokenization;track filetoken) {
-                  <li style="align-items:center">{{ filetoken}}</li>
-                  }
-                </ul>
-              </td>
-              <td>
-                <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-                  @for (rstopword of RemoveStopwordTokenization;track rstopword) {
-                  <li style="align-items:center">{{ rstopword}}</li>
-                  }
-                </ul>
-              </td>
-              <td>
-                <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-                  @for (stemmed of stemmedwords;track stemmed) {
-                  <li style="align-items:center">{{ stemmed}}</li>
-                  }
-                </ul>
-              </td>
-              <td>
-                <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
-                  @for (lemm of LemmatizeWord;track lemm) {
-                  <li style="align-items:center">{{ lemm}}</li>
-                  }
-                </ul>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                count: {{FileTokenization.length}}
-              </td>
-              <td>
-                count: {{RemoveStopwordTokenization.length}}
-              </td>
-              <td>
-                count: {{stemmedwords.length}}
-              </td>
-              <td>
-                count: {{LemmatizeWord.length}}
-              </td>
-            </tr>
+            <thead>
+              <tr>
+                <td>
+                  Tokens
+                </td>
+                <td>
+                  Remove stopword
+                </td>
+                <td>Stemmed</td>
+                <td>Lemmatization </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                    @for (filetoken of FileTokenization;track filetoken) {
+                    <li style="align-items:center">{{ filetoken}}</li>
+                    }
+                  </ul>
+                </td>
+                <td>
+                  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                    @for (rstopword of RemoveStopwordTokenization;track rstopword) {
+                    <li style="align-items:center">{{ rstopword}}</li>
+                    }
+                  </ul>
+                </td>
+                <td>
+                  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                    @for (stemmed of stemmedwords;track stemmed) {
+                    <li style="align-items:center">{{ stemmed}}</li>
+                    }
+                  </ul>
+                </td>
+                <td>
+                  <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                    @for (lemm of LemmatizeWord;track lemm) {
+                    <li style="align-items:center">{{ lemm}}</li>
+                    }
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  count: {{FileTokenization.length}}
+                </td>
+                <td>
+                  count: {{RemoveStopwordTokenization.length}}
+                </td>
+                <td>
+                  count: {{stemmedwords.length}}
+                </td>
+                <td>
+                  count: {{LemmatizeWord.length}}
+                </td>
+              </tr>
+              </tbody>
           </table>
         </div>
 
