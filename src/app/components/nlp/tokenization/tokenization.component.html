@@ -48,6 +48,7 @@
                 Remove stopword
               </td>
               <td>Stemmed</td>
+              <td>Lemmatization </td>
             </tr>
             <tr>
               <td>
@@ -71,6 +72,13 @@
                   }
                 </ul>
               </td>
+              <td>
+                <ul style="overflow-y: scroll; max-height: 150px; max-width: 300px; text-align:center;justify-items:center">
+                  @for (lemm of LemmatizeWord;track lemm) {
+                  <li style="align-items:center">{{ lemm}}</li>
+                  }
+                </ul>
+              </td>
             </tr>
             <tr>
               <td>
@@ -81,6 +89,9 @@
               </td>
               <td>
                 count: {{stemmedwords.length}}
+              </td>
+              <td>
+                count: {{LemmatizeWord.length}}
               </td>
             </tr>
           </table>

@@ -24,6 +24,7 @@ export class TokenizationComponent {
   RemoveStopwordTokenization: any[] = [];
   stemmedwords: any[] = [];
   pos: any[] = [];
+  LemmatizeWord: any[] = [];
 
   result: any;
   status: "initial" | "uploading" | "success" | "fail" = "initial";
@@ -63,6 +64,7 @@ export class TokenizationComponent {
         this.FileTokenization = tokens;
         this.RemoveStopwordTokenization = StopWord;
         this.stemmedwords = this.result.stemmed_words;
+        this.LemmatizeWord = this.result.LemmatizeWord;
       });
     }
   }
