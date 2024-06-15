@@ -73,7 +73,7 @@ export class TokenizationComponent {
 
       this.service.pos(this.file).subscribe(responce => {
         this.result = JSON.parse(JSON.stringify(responce)).body;
-        this.pos = this.result.POS;
+        this.pos = this.result.PartOfSpeach;
       });
     }
   }
