@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { OpenAIComponent } from './open-ai.component';
 
-import { TestimonialsComponent } from './testimonials.component';
 
-describe('TestimonialsComponent', () => {
-  let component: TestimonialsComponent;
-  let fixture: ComponentFixture<TestimonialsComponent>;
+describe('OpenAIComponent', () => {
+  let component: OpenAIComponent;
+  let fixture: ComponentFixture<OpenAIComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TestimonialsComponent]
+      imports: [OpenAIComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TestimonialsComponent);
+    fixture = TestBed.createComponent(OpenAIComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

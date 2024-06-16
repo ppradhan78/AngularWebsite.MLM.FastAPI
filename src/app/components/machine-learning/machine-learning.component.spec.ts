@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MachineLearningComponent } from './machine-learning.component';
 
-import { GalleryComponent } from './gallery.component';
 
-describe('GalleryComponent', () => {
-  let component: GalleryComponent;
-  let fixture: ComponentFixture<GalleryComponent>;
+describe('MachineLearningComponent', () => {
+  let component: MachineLearningComponent;
+  let fixture: ComponentFixture<MachineLearningComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GalleryComponent]
+      imports: [MachineLearningComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(GalleryComponent);
+    fixture = TestBed.createComponent(MachineLearningComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
