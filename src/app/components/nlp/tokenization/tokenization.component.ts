@@ -32,6 +32,9 @@ export class TokenizationComponent {
 
   ngram: number=2;
 
+  imageData: any;
+  imgUrl: string='';
+  results: any;
   constructor(private service: MlModelService) {
   }
 
@@ -93,5 +96,28 @@ export class TokenizationComponent {
         this.grams = this.result.ngrams;
       });
     }
+  }
+
+  //GetPlot() {
+  //  this.imgUrl = 'http://127.0.0.1:8000/plot';
+  //  this.service.GetPlot().subscribe(responce => {
+
+  //    this.results = JSON.parse(JSON.stringify(responce)).body;
+  //    var b64Response = btoa(this.result.content);
+  //    this.imageData = 'data:image/png;base64,' + b64Response;
+  //    alert(this.imgUrl);
+  //  })
+  //}
+  GetPlot() {
+    this.service.getImageUrl().subscribe(
+      (url) => {
+        this.imgUrl = url;
+        //location.href = this.imgUrl;
+        window.open(url, '_blank')?.focus();
+      },
+      (error) => {
+        console.error("Error fetching image URL:", error);
+      }
+    );
   }
 }

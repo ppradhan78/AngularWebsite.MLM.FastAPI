@@ -1,6 +1,6 @@
 import { HttpClient,  HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ApiUrlConstants } from '../common/constants/apiUrl.constants';
 
 @Injectable({
@@ -86,5 +86,12 @@ export class MlModelService {
       responseType: 'json'
     });
     return this.http.request(req)
+  }
+
+  GetPlot(): Observable<any> {
+    return this.http.get<any>(ApiUrlConstants.GetPlotAPI)
+  }
+  getImageUrl(): Observable<string> {
+    return  of(ApiUrlConstants.GetPlotAPI);
   }
 }
