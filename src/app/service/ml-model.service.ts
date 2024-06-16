@@ -24,7 +24,18 @@ export class MlModelService {
     });
     return this.http.request(req)
   }
+  getAllNgramTokenization(file: File, ngram: any): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    formData.append('ngram', ngram);
 
+    const req = new HttpRequest('POST', ApiUrlConstants.GetNGramFileAPI + ngram, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req)
+  }
+  
   upload(file: File): Observable<any>{
     const formData: FormData = new FormData();
     formData.append('file', file);

@@ -25,10 +25,12 @@ export class TokenizationComponent {
   stemmedwords: any[] = [];
   pos: any[] = [];
   LemmatizeWord: any[] = [];
-
+  grams: any[] = [];
   result: any;
   status: "initial" | "uploading" | "success" | "fail" = "initial";
   file: File | null = null;
+
+  ngram: number=2;
 
   constructor(private service: MlModelService) {
   }
@@ -77,6 +79,18 @@ export class TokenizationComponent {
       this.service.pos(this.file).subscribe(responce => {
         this.result = JSON.parse(JSON.stringify(responce)).body;
         this.pos = this.result.PartOfSpeach;
+      });
+    }
+  }
+
+  getAllNgramTokenization(ngram:number) {
+    if (this.file) {
+      const formData = new FormData();
+      formData.append("file", this.file, this.file.name);
+
+      this.service.getAllNgramTokenization(this.file, ngram).subscribe(responce => {
+        this.result = JSON.parse(JSON.stringify(responce)).body;
+        this.grams = this.result.ngrams;
       });
     }
   }

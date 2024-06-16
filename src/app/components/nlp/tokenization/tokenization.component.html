@@ -23,10 +23,10 @@
       </p>
     </div>
   </mat-tab>
-    <mat-tab label="Tokenization">
+    <mat-tab label="Text Pre-Processing">
       <div>
         <div>
-          <h4>Enter tokenization text</h4>
+          <h4>Enter  text</h4>
           <textarea class="text-area" type="text" [(ngModel)]="tokenizationText"></textarea><br />
           <button class="example-button-row" mat-flat-button type="submit" (click)="getAllTokenization(tokenizationText)" value="Tokenize" [disabled]="!tokenizationText">Tokenize</button>
           <h4>List of Token</h4>
@@ -122,9 +122,16 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Third"> <div class="example-button-row">
-  <button mat-button>Basic</button>
-  <button mat-button disabled>Disabled</button>
-  <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-</div> </mat-tab>
+    <mat-tab label="N-gram Tokenization">  
+      <div>
+        <input type="text" id="ngram" [(ngModel)]="ngram" />
+        <button class="example-button-row" mat-flat-button type="submit" (click)="getAllNgramTokenization(ngram)" value="Tokenize" [disabled]="!file">N-gram Tokenization</button>
+        <ul style="overflow-y: scroll; max-height: 150px; max-width: 800px; text-align:center;justify-items:center">
+          @for (gram of grams;track gram) {
+          <li style="align-items:center">{{ gram}}</li>
+          }
+        </ul>
+      </div>
+ 
+  </mat-tab>
 </mat-tab-group>
