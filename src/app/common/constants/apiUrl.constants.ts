@@ -9,9 +9,10 @@ export class ApiUrlConstants  {
   public static BowFileAPI = 'https://mlmodelfastapi.onrender.com/GetBoW'
   //public static GetNGramFileAPI = 'http://127.0.0.1:8000/GetNGram?ngramsNumber='
   public static GetNGramFileAPI = 'https://mlmodelfastapi.onrender.com/GetNGram?ngramsNumber='
+  public static GetPhraseMatcherAPI = 'https://mlmodelfastapi.onrender.com/GetPhraseMatcher?Phras='
 
 
-
+  
 
 
 }

@@ -8,8 +8,8 @@
       <!--<button mat-raised-button color="primary" aria-label="Set Removing stop words">Removing stop words</button>-->
       <!--<button mat-raised-button color="primary" aria-label="Set lemmatization">Lemmatization</button>-->
       <!--<button mat-raised-button color="primary" aria-label="Set stemming ">Stemming</button>-->
-      <button mat-raised-button color="primary" aria-label="Set Pattern Matching">Pattern Matching</button>
-      <button mat-raised-button color="primary" aria-label="Set Phrase Matcher">Phrase Matcher</button>
+      <button mat-raised-button color="primary" aria-label="Set Pattern Matching" (click)="loadpatternOrPhraseMatcherComponent()">Pattern/Phrase Matching</button>
+      <!--<button mat-raised-button color="primary" aria-label="Set Phrase Matcher">Phrase Matcher</button>-->
       <button mat-raised-button color="primary" aria-label="Set Named entity recognition">Named entity recognition</button>
       <button mat-raised-button color="primary" aria-label="Set feature extraction">Feature extraction</button>
       <button mat-raised-button color="primary" aria-label="Set Document frequency">Document frequency</button>
@@ -23,5 +23,6 @@
     <app-tokenization [hidden]="tokenizationLoaded"></app-tokenization>
     <app-summarization [hidden]="summarizationLoad"></app-summarization>
     <app-bag-of-words [hidden]="bowLoad"></app-bag-of-words>
+    <app-pattern-or-phrase-matcher [hidden]="patternOrPhraseMatcherLoad"></app-pattern-or-phrase-matcher>
   </div>
 </div>

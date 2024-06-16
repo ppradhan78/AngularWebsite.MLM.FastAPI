@@ -1,0 +1,11 @@
+<div>
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".txt" /><br />
+  <input type="text" id="phrase" [(ngModel)]="phrase" /><br />
+  <button class="example-button-row" mat-flat-button (click)="GetPhraseMatcher(phrase)" [disabled]="!file" type="submit">Upload and Phrase Matcher</button>
+</div>
+<ul style="overflow-y: scroll;  text-align:center;justify-items:center">
+  @for (ph of phrases;track ph) {
+  <li style="align-items:center">{{ ph}}</li>
+  }
+</ul>
+<div>Count:{{phrases.length}}</div>
