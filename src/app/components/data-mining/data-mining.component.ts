@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-pricing',
   standalone: true,
   imports: [],
-  templateUrl: './pricing.component.html',
-  styleUrl: './pricing.component.css'
+  templateUrl: './data-mining.component.html',
+  styleUrl: './data-mining.component.css'
 })
-export class PricingComponent {
+export class DataMiningComponent {
 
 }

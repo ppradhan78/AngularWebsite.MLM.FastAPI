@@ -4,19 +4,20 @@ import { RouterOutlet } from '@angular/router';
 import { RouterLink, RouterLinkActive } from '@angular/router'
 import { HeaderComponent } from './components/header/header.component';
 import { NlpComponent } from './components/nlp/nlp.component';
-import { PricingComponent } from './components/pricing/pricing.component';
-import { TestimonialsComponent } from './components/testimonials/testimonials.component';
-import { GalleryComponent } from './components/gallery/gallery.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TokenizationComponent } from './components/nlp/tokenization/tokenization.component';
+import { DeepLearningComponent } from './components/deep-learning/deep-learning.component';
+import { DataMiningComponent } from './components/data-mining/data-mining.component';
+import { OpenAIComponent } from './components/open-ai/open-ai.component';
+import { MachineLearningComponent } from './components/machine-learning/machine-learning.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, NlpComponent,
-   PricingComponent, TestimonialsComponent, 
-    GalleryComponent, NavComponent,  FooterComponent, TokenizationComponent],
+    DataMiningComponent, OpenAIComponent, 
+    MachineLearningComponent, NavComponent, FooterComponent, TokenizationComponent, DeepLearningComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
