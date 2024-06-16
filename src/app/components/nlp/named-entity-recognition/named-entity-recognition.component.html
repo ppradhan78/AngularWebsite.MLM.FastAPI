@@ -1,0 +1,10 @@
+<div>
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".txt" /><br />
+  <button class="example-button-row" mat-flat-button (click)="GetNamedEntity()" [disabled]="!file" type="submit">Upload and Named Entity</button>
+</div>
+<ul style="overflow-y: scroll; max-height: 500px; max-width: 300px; text-align: center; justify-items: center">
+  @for (ne of NamedEntity;track ne) {
+  <li style="align-items:center">{{ ne}}</li>
+  }
+</ul>
+<div>Count:{{NamedEntity.length}}</div>

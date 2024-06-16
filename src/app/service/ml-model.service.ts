@@ -47,6 +47,15 @@ export class MlModelService {
     });
     return this.http.request(req)
   }
+  GetNamedEntity(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    const req = new HttpRequest('POST', ApiUrlConstants.GetNamedEntityFileAPI , formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+    return this.http.request(req)
+  }
   
   upload(file: File): Observable<any>{
     const formData: FormData = new FormData();

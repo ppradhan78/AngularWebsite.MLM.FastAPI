@@ -10,6 +10,7 @@ export class ApiUrlConstants  {
   //public static GetNGramFileAPI = 'http://127.0.0.1:8000/GetNGram?ngramsNumber='
   public static GetNGramFileAPI = 'https://mlmodelfastapi.onrender.com/GetNGram?ngramsNumber='
   public static GetPhraseMatcherAPI = 'https://mlmodelfastapi.onrender.com/GetPhraseMatcher?Phras='
+  public static GetNamedEntityFileAPI = 'https://mlmodelfastapi.onrender.com/GetNamedEntityRecognition'
 
 
   

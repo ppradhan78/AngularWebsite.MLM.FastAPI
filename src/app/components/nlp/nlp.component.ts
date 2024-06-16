@@ -5,11 +5,12 @@ import { TokenizationComponent } from './tokenization/tokenization.component';
 import { SummarizationComponent } from './summarization/summarization.component';
 import { BagOfWordsComponent } from './bag-of-words/bag-of-words.component';
 import { PatternOrPhraseMatcherComponent } from './pattern-or-phrase-matcher/pattern-or-phrase-matcher.component';
+import { NamedEntityRecognitionComponent } from './named-entity-recognition/named-entity-recognition.component';
 @Component({
   selector: 'app-nlp',
   standalone: true,
   imports: [MatButtonModule, MatCardModule, TokenizationComponent, SummarizationComponent, BagOfWordsComponent,
-    PatternOrPhraseMatcherComponent],
+    PatternOrPhraseMatcherComponent, NamedEntityRecognitionComponent],
   templateUrl: './nlp.component.html',
   styleUrl: './nlp.component.css'
 })
@@ -19,6 +20,8 @@ export class NlpComponent {
   summarizationLoad: boolean = true;
   bowLoad: boolean = true;
   patternOrPhraseMatcherLoad = true;
+ namedEntityRecognitionLoad = true;
+
   constructor() {
   }
   loadTokenizationComponent() {
@@ -33,6 +36,7 @@ export class NlpComponent {
     this.tokenizationLoaded = true
     this.bowLoad = true;
     this.patternOrPhraseMatcherLoad = true;
+    this.namedEntityRecognitionLoad = true;
 
 
   }
@@ -41,6 +45,7 @@ export class NlpComponent {
     this.summarizationLoad = true;
     this.tokenizationLoaded = true
     this.patternOrPhraseMatcherLoad = true;
+    this.namedEntityRecognitionLoad = true;
     this.bowLoad = false;
   }
 
@@ -48,6 +53,14 @@ export class NlpComponent {
     this.summarizationLoad = true;
     this.tokenizationLoaded = true
     this.bowLoad = true;
+    this.namedEntityRecognitionLoad = true;
     this.patternOrPhraseMatcherLoad = false;
+  }
+  loadnamedEntityRecognitionComponent() {
+    this.summarizationLoad = true;
+    this.tokenizationLoaded = true
+    this.bowLoad = true;
+    this.patternOrPhraseMatcherLoad = true;
+    this.namedEntityRecognitionLoad = false;
   }
 }
