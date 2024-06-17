@@ -101,23 +101,21 @@ export class TokenizationComponent {
       });
     }
   }
-  GetPlot() {
-    this.service.getImageUrl().subscribe(
-      (url) => {
-        this.imgUrl = url;
-        //location.href = this.imgUrl;
-        window.open(url, '_blank')?.focus();
-      },
-      (error) => {
-        console.error("Error fetching image URL:", error);
-      }
-    );
-  }
 
   generateWordcloudGet(text: string) {
     this.service.generateWordcloudGet(text).subscribe(blob => {
       const objectURL = URL.createObjectURL(blob);
       this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     });
+  }
+  GetPlotFromFile() {
+    if (this.file) {
+      const formData = new FormData();
+      formData.append("file", this.file, this.file.name);
+      this.service.GetPlotFromFile(this.file).subscribe(blob => {
+        const objectURL = URL.createObjectURL(blob);
+        this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      });
+    }
   }
 }

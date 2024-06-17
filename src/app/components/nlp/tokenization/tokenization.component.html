@@ -1,6 +1,6 @@
 
 <div >
-  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".txt" />
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".txt,.csv" />
 </div>
 
 <mat-tab-group>
@@ -13,13 +13,10 @@
         3.	Remove Punctuation from sentence(s).<br />
         4.	Stemming of words of the sentence(s).<br />
         5.	Lemmatization of words of the sentence(s).<br />
-        6.	Pattern Matching from the sentence(s).<br />
-        7.	Phrase Matcher from the sentence(s).<br />
-        8.	Named Entity Recognition from the sentence(s).<br />
-        9.	Bag of Words from the sentence(s).<br />
-        10.	Feature Extraction from the sentence(s).<br />
-        11.	Document Frequency from the sentence(s).<br />
-        12.	Term Frequency from the sentence(s).<br />
+        6.	Part of speech from sentence(s)<br />
+        7.	N gram from sentence(s) <br />
+        8.	Generate Word cloud from text file<br />
+        9.	Generate Plot from csv file<br />
       </p>
     </div>
   </mat-tab>
@@ -134,7 +131,7 @@
     </div>
 
   </mat-tab>
-  <mat-tab label="Word Cloud">
+  <mat-tab label="Generate Word Cloud">
     <div>
       <textarea class="text-area" #textInput type="text" [(ngModel)]="wordcloudtext" placeholder="Enter text for word cloud" ></textarea><br />
       <button (click)="generateWordcloudGet(wordcloudtext)">Generate Word Cloud</button>
@@ -143,8 +140,8 @@
       <img [src]="imageUrl" alt="Word Cloud" />
     </div>
   </mat-tab>
-  <mat-tab label="Plot">
-    <button class="example-button-row" mat-flat-button type="submit" (click)="GetPlot()">Generate Scatter Plot</button>
-    <!--<img src={{imgUrl}} style="width:300px;height:300px" />-->
+  <mat-tab label="Generate Plot">
+    <button class="example-button-row" mat-flat-button type="submit" [disabled]="!file" (click)="GetPlotFromFile()">Generate Scatter Plot From CSV File</button>
+    <img [src]="imageUrl" alt="Generate Plot" />
   </mat-tab>
 </mat-tab-group>

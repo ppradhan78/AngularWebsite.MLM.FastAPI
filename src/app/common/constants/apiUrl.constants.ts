@@ -13,6 +13,7 @@ export class ApiUrlConstants  {
   public static GetNamedEntityFileAPI = 'https://mlmodelfastapi.onrender.com/GetNamedEntityRecognition'
   public static GetPlotAPI = 'https://mlmodelfastapi.onrender.com/plot';
   public static GetWordcloudAPI = 'https://mlmodelfastapi.onrender.com/wordcloud?text=';
+  public static GetPlotFromFileAPI = 'https://mlmodelfastapi.onrender.com/create_upload_file_plot';
   
 
 }

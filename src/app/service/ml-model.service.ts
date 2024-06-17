@@ -98,4 +98,10 @@ export class MlModelService {
     //return this.http.get(`${"http://127.0.0.1:8000/wordcloudGet"}?text=${encodeURIComponent(text)}`, { responseType: 'blob' });
     return this.http.get(ApiUrlConstants.GetWordcloudAPI +encodeURIComponent(text), { responseType: 'blob' });
   }
+
+  GetPlotFromFile(file: File): Observable<Blob> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http.post(ApiUrlConstants.GetPlotFromFileAPI, formData, { responseType: 'blob' });
+  }
 }
