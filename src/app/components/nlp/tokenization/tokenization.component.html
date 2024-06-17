@@ -2,7 +2,11 @@
 <div >
   <input type="file" class="file-input" (change)="onChange($event)" #fileUpload accept=".txt,.csv" />
 </div>
-
+<div >
+  <label title="Sampel File">Sampel File</label><br />
+  <a class="iconsBG" title="csv" href='/assets/data/stock.csv'download="stock.csv"><i class="far fa-file-excel"></i>Stock</a><br />
+  <a class="iconsBG" title="Excel" href='/assets/data/MahatmaGandhi.txt' download="MahatmaGandhi.txt"><i class="far fa-file-excel"></i>MahatmaGandhi</a>
+</div>
 <mat-tab-group>
   <mat-tab label="Main contents">
     <p style="color: forestgreen; font-weight: bolder; text-decoration: underline;">Use of nltk library in python demo</p>
