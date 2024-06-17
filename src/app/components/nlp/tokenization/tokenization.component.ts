@@ -3,6 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { MlModelService } from '../../../service/ml-model.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { ApiUrlConstants } from '../../../common/constants/apiUrl.constants';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+
+
 @Component({
   selector: 'app-tokenization',
   standalone: true,
@@ -18,8 +22,6 @@ export class TokenizationComponent {
   progressInfos: any[] = [];
   message: string[] = [];
 
-  //Tokenize file
-  //fileInfos?: Observable<any>;
   FileTokenization: any[] = [];
   RemoveStopwordTokenization: any[] = [];
   stemmedwords: any[] = [];
@@ -35,7 +37,9 @@ export class TokenizationComponent {
   imageData: any;
   imgUrl: string='';
   results: any;
-  constructor(private service: MlModelService) {
+  imageUrl: SafeUrl | undefined;
+  wordcloudtext: string='';
+  constructor(private service: MlModelService, private sanitizer: DomSanitizer) {
   }
 
   getAllTokenization(searchText: string) {
@@ -97,17 +101,6 @@ export class TokenizationComponent {
       });
     }
   }
-
-  //GetPlot() {
-  //  this.imgUrl = 'http://127.0.0.1:8000/plot';
-  //  this.service.GetPlot().subscribe(responce => {
-
-  //    this.results = JSON.parse(JSON.stringify(responce)).body;
-  //    var b64Response = btoa(this.result.content);
-  //    this.imageData = 'data:image/png;base64,' + b64Response;
-  //    alert(this.imgUrl);
-  //  })
-  //}
   GetPlot() {
     this.service.getImageUrl().subscribe(
       (url) => {
@@ -119,5 +112,12 @@ export class TokenizationComponent {
         console.error("Error fetching image URL:", error);
       }
     );
+  }
+
+  generateWordcloudGet(text: string) {
+    this.service.generateWordcloudGet(text).subscribe(blob => {
+      const objectURL = URL.createObjectURL(blob);
+      this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+    });
   }
 }

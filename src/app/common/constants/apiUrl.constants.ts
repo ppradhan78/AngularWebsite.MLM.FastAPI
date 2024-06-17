@@ -12,7 +12,7 @@ export class ApiUrlConstants  {
   public static GetPhraseMatcherAPI = 'https://mlmodelfastapi.onrender.com/GetPhraseMatcher?Phras='
   public static GetNamedEntityFileAPI = 'https://mlmodelfastapi.onrender.com/GetNamedEntityRecognition'
   public static GetPlotAPI = 'https://mlmodelfastapi.onrender.com/plot';
+  public static GetWordcloudAPI = 'https://mlmodelfastapi.onrender.com/wordcloud?text=';
   
-
 
 }

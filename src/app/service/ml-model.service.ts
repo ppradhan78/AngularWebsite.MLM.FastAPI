@@ -1,4 +1,4 @@
-import { HttpClient,  HttpRequest } from '@angular/common/http';
+import { HttpClient,  HttpHeaders,  HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ApiUrlConstants } from '../common/constants/apiUrl.constants';
@@ -93,5 +93,9 @@ export class MlModelService {
   }
   getImageUrl(): Observable<string> {
     return  of(ApiUrlConstants.GetPlotAPI);
+  }
+  generateWordcloudGet(text: string): Observable<Blob> {
+    //return this.http.get(`${"http://127.0.0.1:8000/wordcloudGet"}?text=${encodeURIComponent(text)}`, { responseType: 'blob' });
+    return this.http.get(ApiUrlConstants.GetWordcloudAPI +encodeURIComponent(text), { responseType: 'blob' });
   }
 }

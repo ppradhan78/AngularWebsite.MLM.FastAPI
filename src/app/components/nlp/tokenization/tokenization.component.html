@@ -134,6 +134,15 @@
     </div>
 
   </mat-tab>
+  <mat-tab label="Word Cloud">
+    <div>
+      <textarea class="text-area" #textInput type="text" [(ngModel)]="wordcloudtext" placeholder="Enter text for word cloud" ></textarea><br />
+      <button (click)="generateWordcloudGet(wordcloudtext)">Generate Word Cloud</button>
+    </div>
+    <div >
+      <img [src]="imageUrl" alt="Word Cloud" />
+    </div>
+  </mat-tab>
   <mat-tab label="Plot">
     <button class="example-button-row" mat-flat-button type="submit" (click)="GetPlot()">Generate Scatter Plot</button>
     <!--<img src={{imgUrl}} style="width:300px;height:300px" />-->
