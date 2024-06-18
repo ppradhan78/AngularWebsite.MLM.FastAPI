@@ -138,14 +138,14 @@
   <mat-tab label="Generate Word Cloud">
     <div>
       <textarea class="text-area" #textInput type="text" [(ngModel)]="wordcloudtext" placeholder="Enter text for word cloud" ></textarea><br />
-      <button (click)="generateWordcloudGet(wordcloudtext)">Generate Word Cloud</button>
+      <button  class="example-button-row" (click)="generateWordcloudGet(wordcloudtext)">Generate Word Cloud</button>
     </div>
     <div >
-      <img [src]="imageUrl" alt="Word Cloud" />
+      <img [src]="imageWcUrl" alt="Word Cloud" />
     </div>
   </mat-tab>
   <mat-tab label="Generate Plot">
     <button class="example-button-row" mat-flat-button type="submit" [disabled]="!file" (click)="GetPlotFromFile()">Generate Scatter Plot From CSV File</button>
-    <img [src]="imageUrl" alt="Generate Plot" />
+    <img [src]="imagePlotUrl" alt="Generate Plot" />
   </mat-tab>
 </mat-tab-group>

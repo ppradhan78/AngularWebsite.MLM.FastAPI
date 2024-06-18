@@ -35,9 +35,9 @@ export class TokenizationComponent {
   ngram: number=2;
 
   imageData: any;
-  imgUrl: string='';
+  imagePlotUrl: SafeUrl | undefined;
   results: any;
-  imageUrl: SafeUrl | undefined;
+  imageWcUrl: SafeUrl | undefined;
   wordcloudtext: string='';
   constructor(private service: MlModelService, private sanitizer: DomSanitizer) {
   }
@@ -105,7 +105,7 @@ export class TokenizationComponent {
   generateWordcloudGet(text: string) {
     this.service.generateWordcloudGet(text).subscribe(blob => {
       const objectURL = URL.createObjectURL(blob);
-      this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      this.imageWcUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
     });
   }
   GetPlotFromFile() {
@@ -114,7 +114,7 @@ export class TokenizationComponent {
       formData.append("file", this.file, this.file.name);
       this.service.GetPlotFromFile(this.file).subscribe(blob => {
         const objectURL = URL.createObjectURL(blob);
-        this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
+        this.imagePlotUrl = this.sanitizer.bypassSecurityTrustUrl(objectURL);
       });
     }
   }
