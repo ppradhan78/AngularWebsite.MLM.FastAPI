@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 
@@ -10,5 +11,10 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './machine-learning.component.css'
 })
 export class MachineLearningComponent {
+
+  constructor(@Inject(DOCUMENT) private document: Document) { }
+  gotoJupyterExp(): void {
+    this.document.location.href = 'https://outcomerecommendations.onrender.com/';
+  }
 
 }

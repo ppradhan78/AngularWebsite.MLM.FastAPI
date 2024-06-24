@@ -11,12 +11,13 @@ import { DeepLearningComponent } from './components/deep-learning/deep-learning.
 import { DataMiningComponent } from './components/data-mining/data-mining.component';
 import { OpenAIComponent } from './components/open-ai/open-ai.component';
 import { MachineLearningComponent } from './components/machine-learning/machine-learning.component';
+import { DataAnalysisComponent } from './components/data-analysis/data-analysis.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, NlpComponent,
-    DataMiningComponent, OpenAIComponent, 
+    DataMiningComponent, OpenAIComponent, DataAnalysisComponent,
     MachineLearningComponent, NavComponent, FooterComponent, TokenizationComponent, DeepLearningComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
