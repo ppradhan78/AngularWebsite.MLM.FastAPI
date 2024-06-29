@@ -2,14 +2,19 @@
 <div class="row">
   <div class="column">
     <mat-card class="contents_submenu">
-      <button mat-raised-button color="primary" aria-label="Set Tokenization">Predictive Analytics</button>
-      <button mat-raised-button color="primary" aria-label="Set Bag of words">Imagery Analysis</button>
-      <button mat-raised-button color="primary" aria-label="Set Pattern Matching">Time Series Analysis</button>
-      <button mat-raised-button color="primary" aria-label="Set Named entity recognition">Forecasting</button>
+      <button mat-raised-button color="primary" aria-label="Set Tokenization" (click)="gotoOlympicDataAnalytics()">Olympic Games Data Analytics</button>
+      <button mat-raised-button color="primary" aria-label="Set Tokenization">Northwind Power BI  Data Analytics</button>
+      <button mat-raised-button color="primary" aria-label="Set Tokenization" style="color:red;" >Predictive Analytics</button>
+      <button mat-raised-button color="primary" aria-label="Set Bag of words" style="color:red;" >Imagery Analysis</button>
+      <button mat-raised-button color="primary" aria-label="Set Pattern Matching" style="color:red;" >Time Series Analysis</button>
+      <button mat-raised-button color="primary" aria-label="Set Named entity recognition" style="color:red;" >Forecasting</button>
 
     </mat-card>
   </div>
   <div class="column">
+    <br />
+    <br />
+    <a class="iconsBG" title="csv" href='/assets/data/NorthwindRestApiDashBoard.pbix' download="NorthwindRestApiDashBoard.pbix"><i class="far fa-file-excel"></i>Northwind Power BI  Data Analytics</a><br />
 
   </div>
 </div>
